@@ -430,6 +430,8 @@
 #
 # $server_puppetserver_logdir::             The path of the puppetserver log dir
 #
+# $server_puppetserver_logformat::          Format for puppetserver log files, either plain text or json.  Defaults
+#                                           to plain text.
 # $server_puppetserver_dir::                The path of the puppetserver config dir
 #
 # $server_puppetserver_version::            The version of puppetserver 2 installed (or being installed)
@@ -646,6 +648,7 @@ class puppet (
   Optional[Stdlib::Absolutepath] $server_puppetserver_vardir = $puppet::params::server_puppetserver_vardir,
   Optional[Stdlib::Absolutepath] $server_puppetserver_rundir = $puppet::params::server_puppetserver_rundir,
   Optional[Stdlib::Absolutepath] $server_puppetserver_logdir = $puppet::params::server_puppetserver_logdir,
+  Optional[String] $server_puppetserver_logformat = $puppet::params::server_puppetserver_logformat,
   Pattern[/^[\d]\.[\d]+\.[\d]+$/] $server_puppetserver_version = $puppet::params::server_puppetserver_version,
   Boolean $server_service_fallback = $puppet::params::server_service_fallback,
   Integer[0] $server_passenger_min_instances = $puppet::params::server_passenger_min_instances,
